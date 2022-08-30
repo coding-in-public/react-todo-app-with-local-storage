@@ -1,0 +1,107 @@
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .6em;
+  font-size: var(--_size);
+  border: .2em solid hsl(var(--muted) / 0.8);
+  padding: .6em;
+  border-radius: calc(var(--_radius) * 2);
+}
+
+.task-group {
+  display: flex;
+  align-items: center;
+  --taskgroup-gap: .5em;
+  gap: var(--taskgroup-gap);
+}
+
+.label {
+  position: relative;
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.checkbox {
+  flex-shrink: 0;
+  appearance: none;
+  border-radius: var(--_radius);
+  width: 1em;
+  height: 1em;
+  background-color: hsl(var(--muted));
+  border-radius: var(--_radius);
+  box-shadow:
+    0 0 .5em hsl(var(--accent) / .1),
+    0 0 0 0.05em hsl(var(--accent) / .5),
+    0 0 0 -0.2em hsl(var(--accent));
+  transition: box-shadow var(--_tspeed_fast) ease-in-out,
+    background-color 80ms ease-in-out;
+}
+
+.checkbox:focus {
+  outline: none;
+}
+
+.checkbox:is(:focus-visible, :hover) {
+  box-shadow:
+    0 0 0 hsl(var(--bg)),
+    0 0 0 .05em hsl(var(--accent)),
+    0 0 0 .225em hsl(var(--accent) / .3);
+}
+
+.checkmark {
+  content: '';
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  display: grid;
+  place-items: center;
+  top: 50%;
+  color: hsl(var(--muted));
+  border-radius: var(--_radius);
+  transform: translate3d(calc(-100% - var(--taskgroup-gap)), -50%, 0);
+  transition: background-color 80ms ease-in-out;
+}
+
+.checkmark svg {
+  width: .75em;
+  height: .75em;
+}
+
+.checkbox:checked {
+  background-color: hsl(var(--accent));
+}
+
+.checkbox:checked+label {
+  text-decoration: line-through;
+}
+
+.delete {
+  --accent: var(--accent1);
+}
+
+.loading {
+  color: hsl(var(--accent));
+  font-size: var(--_size);
+  font-weight: bold;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.error {
+  color: hsl(var(--accent1));
+  font-size: var(--_size);
+  text-align: center;
+}
