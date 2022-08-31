@@ -26,6 +26,7 @@
 .checkbox {
   flex-shrink: 0;
   appearance: none;
+  -webkit-appearance: none;
   border-radius: var(--_radius);
   width: 1em;
   height: 1em;

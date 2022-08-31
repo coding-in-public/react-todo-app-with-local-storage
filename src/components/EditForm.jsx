@@ -16,7 +16,7 @@ const EditForm = ({ editedTask, updateTask, closeEditMode }) => {
     return () => {
       window.removeEventListener('keydown', closeModalIfEscaped)
     }
-  }, [])
+  }, [closeEditMode])
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
