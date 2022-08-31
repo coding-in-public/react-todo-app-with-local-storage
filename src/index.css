@@ -184,6 +184,7 @@ hr {
 .label {
   text-transform: uppercase;
   font-size: 0.7em;
+  pointer-events: none;
   letter-spacing: 0.05em;
   margin-inline: 0.45em;
   position: absolute;
