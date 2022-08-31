@@ -2,6 +2,8 @@
 
 During the course of this series, we’ll use React to build out a todo app that saves and loads to local storage.
 
+[Link to YouTube video](https://youtu.be/LzFY8efOvH8)
+
 ![Preview of Landing Page](./preview.jpeg)
 
 ## Lesson Help
